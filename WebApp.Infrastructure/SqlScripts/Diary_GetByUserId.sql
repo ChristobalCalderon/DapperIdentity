@@ -1,0 +1,1 @@
+SELECT * FROM Diary WHERE UserId = @UserId

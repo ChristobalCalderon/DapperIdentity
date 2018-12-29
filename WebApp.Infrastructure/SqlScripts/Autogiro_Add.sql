@@ -1,0 +1,36 @@
+INSERT INTO Autogiro
+(   
+	Email,
+	Reporter,
+    FirstName,
+    LastName,
+	PersonalIdentityNumber,
+    Bank,
+	ClearingNumber,
+    AccountNunmber,
+	Debtor,
+    TimeStamp,
+	Location,
+	Signature,
+	PostalCode,
+	Street,
+    PostalAddress
+)
+VALUES
+(
+	@Email,
+	@Reporter,
+    @FirstName,
+    @LastName,
+	@PersonalIdentityNumber,
+    @Bank,
+	@ClearingNumber,
+    @AccountNunmber,
+	@Debtor,
+    @TimeStamp,
+	@Location,
+	@Signature,
+	@PostalCode,
+	@Street,
+    @PostalAddress
+) SELECT CAST(SCOPE_IDENTITY() as int)

@@ -1,0 +1,92 @@
+2018-12-28 18:00:14.027 +01:00 [FTL] Application startup exception
+System.InvalidOperationException: To use UseSpaStaticFiles, you must first register an ISpaStaticFileProvider in the service provider, typically by calling services.AddSpaStaticFiles.
+   at Microsoft.Extensions.DependencyInjection.SpaStaticFilesExtensions.ShouldServeStaticFiles(IApplicationBuilder app, Boolean allowFallbackOnServingWebRootFiles, IFileProvider& fileProviderOrDefault)
+   at Microsoft.Extensions.DependencyInjection.SpaStaticFilesExtensions.UseSpaStaticFilesInternal(IApplicationBuilder app, StaticFileOptions staticFileOptions, Boolean allowFallbackOnServingWebRootFiles)
+   at Microsoft.Extensions.DependencyInjection.SpaStaticFilesExtensions.UseSpaStaticFiles(IApplicationBuilder applicationBuilder, StaticFileOptions options)
+   at Microsoft.Extensions.DependencyInjection.SpaStaticFilesExtensions.UseSpaStaticFiles(IApplicationBuilder applicationBuilder)
+   at WebApp.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in C:\Users\chrcal\Documents\dapper-identity\WebApp\Startup.cs:line 130
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-12-28 18:00:14.244 +01:00 [WRN] Connection processing ended abnormally.
+Microsoft.AspNetCore.Connections.ConnectionAbortedException: The connection was aborted
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2018-12-28 22:00:56.250 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-28 22:01:13.126 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-12-28 22:01:26.980 +01:00 [INF] Successfully validated the token.
+2018-12-28 22:01:51.708 +01:00 [INF] Successfully validated the token.
+2018-12-28 22:07:03.942 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-28 22:07:39.680 +01:00 [INF] Successfully validated the token.
+2018-12-28 22:54:30.775 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-28 22:55:24.092 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-28 22:57:41.013 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-28 23:19:49.894 +01:00 [WRN] User dea2e094-18e3-433e-9c7a-39a55909439f password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:20:27.099 +01:00 [WRN] User 76c00e21-c83d-47db-8a2d-a1ca80060f7e password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:23:16.522 +01:00 [WRN] User fb253c81-05c9-431e-bbe2-ddb227f53689 password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:23:17.909 +01:00 [WRN] User e84ff049-e124-4e75-a131-a9fc2f159b3c password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:23:28.048 +01:00 [WRN] User 5a89239e-9cc5-46a1-be9e-8183256f8b54 password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:23:46.047 +01:00 [WRN] User b3f8fdc7-60d5-4fed-bc61-85a05c8afae8 password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:24:33.061 +01:00 [WRN] User 9115ea1a-bdcd-4b5c-8abe-ee74e5af5e5a password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:24:41.130 +01:00 [WRN] User 1c5d92cb-59f7-4aa2-b7b3-5321def475bb password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresUpper.
+2018-12-28 23:29:03.814 +01:00 [WRN] User 07c1978d-8740-4562-a623-201ea08b9011 validation failed: DuplicateUserName.
+2018-12-28 23:29:17.311 +01:00 [WRN] User 1e156de8-f6ee-43b5-b731-3193b68b596c validation failed: DuplicateUserName.
+2018-12-28 23:29:21.134 +01:00 [WRN] User 7daa750b-8180-4b4c-8a7f-dcedfdde5a69 validation failed: DuplicateUserName.
+2018-12-28 23:29:30.717 +01:00 [WRN] User a14ef2d8-0665-4ecd-b02e-1891c4659219 validation failed: DuplicateUserName.
+2018-12-29 14:21:24.426 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at WebApp.HealthCheck.Handler1.Handle(SomeEvent notification, CancellationToken cancellationToken) in C:\Users\chrcal\Documents\dapper-identity\WebApp\HealthCheck\ASDASD.cs:line 36
+   at MediatR.Mediator.PublishCore(IEnumerable`1 allHandlers)
+   at WebApp.Controllers.StatisticAttendantController.Index() in C:\Users\chrcal\Documents\dapper-identity\WebApp\Controllers\StatisticAttendantController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebApp.MiddleWare.CORSMiddleware.Invoke(HttpContext context) in C:\Users\chrcal\Documents\dapper-identity\WebApp\MiddleWare\CORSMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-29 14:26:11.955 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Mvc.ViewFeatures.ITempDataDictionaryFactory' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Mvc.Controller.get_TempData()
+   at Microsoft.AspNetCore.Mvc.Controller.View(String viewName, Object model)
+   at Microsoft.AspNetCore.Mvc.Controller.View(String viewName)
+   at Microsoft.AspNetCore.Mvc.Controller.View()
+   at WebApp.Controllers.StatisticAttendantController.Index() in C:\Users\chrcal\Documents\dapper-identity\WebApp\Controllers\StatisticAttendantController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebApp.MiddleWare.CORSMiddleware.Invoke(HttpContext context) in C:\Users\chrcal\Documents\dapper-identity\WebApp\MiddleWare\CORSMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

@@ -1,0 +1,1 @@
+SELECT * FROM Attendant WHERE UserId = @UserId
