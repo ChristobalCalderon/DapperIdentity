@@ -28,7 +28,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(AttendantViewModel vm)
+        public async Task<IActionResult> Post([FromBody]AttendantViewModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(AttendantViewModel vm)
+        public async Task<IActionResult> Put([FromBody]AttendantViewModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -83,16 +83,25 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Attendant>> GetByLocationAndDate(string location, DateTime date)
+        public async Task<Attendant> GetByLocationAndDate(string location, DateTime date)
         {
-            var userId = GetClaimValue("sub");
-            var attendant = new Attendant
+
+            try
             {
-                Username = userId,
-                Location = location,
-                Date = date
-            };
-            return await _attendantQuery.GetAttendatiesAsync(attendant);
+                var userId = GetClaimValue("sub");
+                var attendant = new Attendant
+                {
+                    Username = userId,
+                    Location = location,
+                    Date = date
+                };
+
+                return await _attendantQuery.GetAttendateAsync(attendant);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

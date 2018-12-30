@@ -90,3 +90,5 @@ System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Mvc.
    at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
    at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-30 20:43:56.565 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-30 21:03:51.869 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
