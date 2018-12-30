@@ -32,7 +32,11 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _attendCommand.AttendAsync(Mapper.Map<AttendantViewModel, Attendant>(vm));
+                var attend = Mapper.Map<AttendantViewModel, Attendant>(vm);
+                attend.Attend = true;
+                var userId = GetClaimValue("sub");
+                attend.Username = userId;
+                var result = await _attendCommand.AttendAsync(attend);
 
                 if (result)
                 {
@@ -52,7 +56,10 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _attendCommand.ChangeAttendStatusAsync(Mapper.Map<AttendantViewModel, Attendant>(vm));
+                var attend = Mapper.Map<AttendantViewModel, Attendant>(vm);
+                var userId = GetClaimValue("sub");
+                attend.Username = userId;
+                var result = await _attendCommand.ChangeAttendStatusAsync(attend);
 
                 if (result)
                 {
@@ -72,6 +79,19 @@ namespace WebApp.Controllers
         {
             var userId = GetClaimValue("sub");
             var attendant = new Attendant { Username = userId };
+            return await _attendantQuery.GetAttendatiesAsync(attendant);
+        }
+
+        [HttpGet]
+        public async Task<List<Attendant>> GetByLocationAndDate(string location, DateTime date)
+        {
+            var userId = GetClaimValue("sub");
+            var attendant = new Attendant
+            {
+                Username = userId,
+                Location = location,
+                Date = date
+            };
             return await _attendantQuery.GetAttendatiesAsync(attendant);
         }
     }

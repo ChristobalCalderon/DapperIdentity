@@ -2,11 +2,13 @@ INSERT INTO Attendant
 (
 	UserId,
 	Location,
-	Date
+	Date,
+	Attend
 )
 VALUES
 (
 	@UserId,
 	@Location,
-	@Date
+	@Date,
+	@Attend
 )

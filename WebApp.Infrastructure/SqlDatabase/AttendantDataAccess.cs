@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Core.Interfaces;
 using WebApp.Core.Models;
@@ -15,6 +16,11 @@ namespace WebApp.Infrastructure.SqlDatabase
         public async Task<IEnumerable<Attendant>> GetByUsernameAsync(Attendant attendant)
         {
             return await QueryAsync<Attendant>("Attendant_GetByUsername", attendant);
+        }
+
+        public async Task<Attendant> GetByAttendAsync(Attendant attendant)
+        {
+            return (await QueryAsync<Attendant>("Attendant_GetByAttend", attendant)).SingleOrDefault();
         }
 
         public async Task<bool> AddAsync(Attendant attendant)

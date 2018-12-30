@@ -31,6 +31,9 @@
     <None Update="SqlScripts\Attendant_Add.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="SqlScripts\Attendant_GetByAttend.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="SqlScripts\Attendant_GetByUsername.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

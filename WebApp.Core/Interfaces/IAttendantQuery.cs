@@ -8,5 +8,6 @@ namespace WebApp.Core.Interfaces
     public interface IAttendantQuery
     {
         Task<List<Attendant>> GetAttendatiesAsync(Attendant attendant);
+        Task<Attendant> GetAttendateAsync(Attendant attendant);
     }
 }

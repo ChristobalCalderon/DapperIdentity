@@ -9,5 +9,6 @@ namespace WebApp.Core.Models
         public string Username { get; set; }
         public string Location { get; set; }
         public DateTime Date { get; set; }
+        public bool Attend { get; set; }
     }
 }

@@ -20,5 +20,10 @@ namespace WebApp.Core.Queries
         {
            return (await _attendantDataAccess.GetByUsernameAsync(attendant)).ToList();
         }
+
+        public async Task<Attendant> GetAttendateAsync(Attendant attendant)
+        {
+            return await _attendantDataAccess.GetByAttendAsync(attendant);
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace WebApp.Core.Interfaces
     public interface IAttendantDataAccess
     {
         Task<IEnumerable<Attendant>> GetByUsernameAsync(Attendant attendant);
+        Task<Attendant> GetByAttendAsync(Attendant attendant);
         Task<bool> AddAsync(Attendant attendant);
         Task<bool> UpdateAsync(Attendant attendant);
     }
