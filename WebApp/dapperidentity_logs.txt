@@ -92,3 +92,41 @@ System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Mvc.
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2018-12-30 20:43:56.565 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
 2018-12-30 21:03:51.869 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-12-30 21:22:03.948 +01:00 [INF] Successfully validated the token.
+2018-12-30 21:22:14.791 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@UserId".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in C:\projects\dapper\Dapper\SqlMapper.Async.cs:line 678
+   at WebApp.Infrastructure.SqlDatabase.BaseDataAccess.ExecuteAsync[T](String fileName, T entity) in C:\Users\chrcal\Documents\teamleites.backend\WebApp.Infrastructure\SqlDatabase\BaseDataAccess.cs:line 26
+   at WebApp.Infrastructure.SqlDatabase.AttendantDataAccess.AddAsync(Attendant attendant) in C:\Users\chrcal\Documents\teamleites.backend\WebApp.Infrastructure\SqlDatabase\AttendantDataAccess.cs:line 28
+   at WebApp.Core.Commands.AttendantCommand.AttendAsync(Attendant attendant) in C:\Users\chrcal\Documents\teamleites.backend\WebApp.Core\Commands\AttendantCommand.cs:line 21
+   at WebApp.Controllers.AttendantController.Post(AttendantViewModel vm) in C:\Users\chrcal\Documents\teamleites.backend\WebApp\Controllers\AttendantController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at WebApp.MiddleWare.CORSMiddleware.Invoke(HttpContext context) in C:\Users\chrcal\Documents\teamleites.backend\WebApp\MiddleWare\CORSMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:bf93c133-6d5f-48d1-bc27-b432d65a4388
+Error Number:137,State:2,Class:15

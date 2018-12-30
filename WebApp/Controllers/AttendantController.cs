@@ -35,7 +35,7 @@ namespace WebApp.Controllers
                 var attend = Mapper.Map<AttendantViewModel, Attendant>(vm);
                 attend.Attend = true;
                 var userId = GetClaimValue("sub");
-                attend.Username = userId;
+                attend.UserId = userId;
                 var result = await _attendCommand.AttendAsync(attend);
 
                 if (result)
@@ -58,7 +58,7 @@ namespace WebApp.Controllers
             {
                 var attend = Mapper.Map<AttendantViewModel, Attendant>(vm);
                 var userId = GetClaimValue("sub");
-                attend.Username = userId;
+                attend.UserId = userId;
                 var result = await _attendCommand.ChangeAttendStatusAsync(attend);
 
                 if (result)
@@ -78,7 +78,7 @@ namespace WebApp.Controllers
         public async Task<List<Attendant>> Get()
         {
             var userId = GetClaimValue("sub");
-            var attendant = new Attendant { Username = userId };
+            var attendant = new Attendant { UserId = userId };
             return await _attendantQuery.GetAttendatiesAsync(attendant);
         }
 
@@ -91,7 +91,7 @@ namespace WebApp.Controllers
                 var userId = GetClaimValue("sub");
                 var attendant = new Attendant
                 {
-                    Username = userId,
+                    UserId = userId,
                     Location = location,
                     Date = date
                 };
