@@ -50,7 +50,7 @@ namespace WebApp.Infrastructure
 
             StringBuilder sb = new StringBuilder("Hej,\n\n");
             sb.Append("Du är nästan klar. Konfirmera din e-postadress nedan för att aktivera ditt konto och slutföra registreringen.\n\n");
-            string link = "http://.se/#/activation/" + token;
+            string link = $@"https://teamleitesclient.azurewebsites.net/activation?email={email}&code={token}";
             sb.Append(link);
 
             var client = new SendGridClient(_emailSettings.Value.ApiKey);

@@ -82,7 +82,7 @@ namespace WebApp.Controllers
                 string MailText = str.ReadToEnd();
                 str.Close();
 
-                MailText = MailText.Replace("[acitvationLink]", token);
+                MailText = MailText.Replace("[acitvationLink]", $@"email={user.Email}&code={token}");
                 MailText = MailText.Replace("[tsurl]", _configuration["BaseUrlClient"]);
 
 
