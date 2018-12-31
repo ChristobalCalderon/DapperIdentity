@@ -53,8 +53,6 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
-            var passworddHaser = _userManager.PasswordHasher;
-
             var user = new ApplicationUser
             {
                 Id = Guid.NewGuid().ToString(),
@@ -68,6 +66,7 @@ namespace WebApp.Controllers
                 TwoFactorEnabled = false
             };
 
+            var passworddHaser = _userManager.PasswordHasher;
             user.PasswordHash = passworddHaser.HashPassword(user, model.ConfirmPassword);
 
             var result = await _userManager.CreateAsync(user, model.Password);
